@@ -1,6 +1,6 @@
 ---
 blobstore:
-  provider: s3
+  provider: local
   options:
-    bucket_name: avalanche-boshrelease
+    blobstore_path: /tmp/blobs/avalanche-boshrelease
 final_name: avalanche
