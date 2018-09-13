@@ -1,6 +1,6 @@
 # BOSH release for avalanche
 
-This BOSH release and deployment manifest deploy a cluster of avalanche.
+This BOSH release and deployment manifest deploy an instance of avalanche.
 
 ## Usage
 
@@ -8,9 +8,8 @@ This repository includes base manifests and operator files. They can be used for
 
 ```plain
 export BOSH_ENVIRONMENT=<bosh-alias>
-export BOSH_DEPLOYMENT=avalanche
-git clone https://github.com/cloudfoundry-community/avalanche-boshrelease.git
-bosh deploy avalanche-boshrelease/manifests/avalanche.yml
+git clone https://github.com/kfkonrad/avalanche-boshrelease.git
+bosh deploy avalanche-boshrelease/manifests/avalanche.yml -d avalanche
 ```
 
 If your BOSH does not have Credhub/Config Server, then remember `--vars-store` to allow generation of passwords and certificates.
@@ -21,9 +20,7 @@ When new versions of `avalanche-boshrelease` are released the `manifests/avalanc
 
 ```plain
 export BOSH_ENVIRONMENT=<bosh-alias>
-export BOSH_DEPLOYMENT=avalanche
 cd avalanche-boshrelease
 git pull
-cd -
-bosh deploy avalanche-boshrelease/manifests/avalanche.yml
+bosh deploy manifests/avalanche.yml -d avalanche
 ```
