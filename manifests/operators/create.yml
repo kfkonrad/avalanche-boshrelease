@@ -1,0 +1,7 @@
+---
+- type: replace
+  path: /releases/name=avalanche
+  value:
+    name: avalanche
+    version: create
+    url: file://.
