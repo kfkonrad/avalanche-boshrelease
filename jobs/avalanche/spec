@@ -1,6 +1,64 @@
 ---
 name: avalanche
-packages: []
+
+packages: ["avalanche"]
 templates:
-  ignoreme: ignoreme
-properties: {}
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+# Documentation https://bosh.io/docs/links.html
+# Tutorial      https://gist.github.com/Amit-PivotalLabs/c39528248b8cdc4ba8e347f8aa68abb6
+consumes: []
+
+provides:
+- name: avalanche
+  type: avalanche
+  properties:
+  - avalanche.metric_count
+  - avalanche.label_count
+  - avalanche.series_count
+  - avalanche.metricname_length
+  - avalanche.labelname_length
+  - avalanche.value_interval
+  - avalanche.series_interval
+  - avalanche.metric_interval
+  - avalanche.port
+
+properties:
+  avalanche.metric_count:
+    description: 'Number of metrics to serve.'
+    default: 500
+
+  avalanche.label_count:
+    description: 'Number of labels per-metric.'
+    default: 10
+
+  avalanche.series_count:
+    description: 'Number of series per-metric.'
+    default: 10
+
+  avalanche.metricname_length:
+    description: 'Modify length of metric names.'
+    default: 5
+
+  avalanche.labelname_length:
+    description: 'Modify length of label names.'
+    default: 5
+
+  avalanche.value_interval:
+    description: 'Change series values every {interval} seconds.'
+    default: 30
+
+  avalanche.series_interval:
+    description: 'Change series_id label values every {interval} seconds.'
+    default: 60
+
+  avalanche.metric_interval:
+    description: 'Change __name__ label values every {interval} seconds.'
+    default: 120
+
+  avalanche.port:
+    description: 'Port to serve at'
+    default: 9001

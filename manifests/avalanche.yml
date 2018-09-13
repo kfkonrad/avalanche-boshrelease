@@ -11,13 +11,23 @@ instance_groups:
 - name: avalanche
   azs: [z1, z2, z3]
   instances: 1
-  vm_type: default
+  vm_type: large
   stemcell: default
-  networks: [{name: default}]
+  networks: [{name: dynamic}]
   jobs:
   - name: avalanche
     release: avalanche
-    properties: {}
+    properties:
+      avalanche:
+        metric_count: 1000
+        label_count: 10
+        series_count: 10
+        metricname_length: 5
+        labelname_length: 5
+        value_interval: 30
+        series_interval: 60
+        metric_interval: 120
+        port: 9001
 
 variables: []
 

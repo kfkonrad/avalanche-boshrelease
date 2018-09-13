@@ -1,0 +1,3 @@
+[submodule "src/gopath/github.com/kfkonrad/avalanche"]
+	path = src/gopath/github.com/kfkonrad/avalanche
+	url = git@github.com:kfkonrad/avalanche.git

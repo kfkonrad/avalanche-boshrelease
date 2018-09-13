@@ -1,0 +1,6 @@
+set -eux
+
+cd gopath/github.com/kfkonrad/avalanche
+source /var/vcap/packages/golang-1.10-linux/bosh/compile.env
+mkdir -p $BOSH_INSTALL_TARGET/bin
+go build -o=$BOSH_INSTALL_TARGET/bin/avalanche ./cmd

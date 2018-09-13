@@ -1,0 +1,6 @@
+---
+name: avalanche
+dependencies:
+- golang-1.10-linux
+files:
+- gopath/**/*

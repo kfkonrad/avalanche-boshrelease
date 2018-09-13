@@ -1,0 +1,5 @@
+check process avalanche
+  with pidfile /var/vcap/sys/run/avalanche/avalanche.pid
+  start program "/var/vcap/jobs/avalanche/bin/monit_debugger ctl '/var/vcap/jobs/avalanche/bin/ctl start'"
+  stop program "/var/vcap/jobs/avalanche/bin/monit_debugger ctl '/var/vcap/jobs/avalanche/bin/ctl stop'"
+  group vcap
