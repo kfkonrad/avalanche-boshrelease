@@ -1,12 +1,6 @@
 ---
 name: avalanche
 
-addons:
-- name: bpm
-  jobs:
-  - name: bpm
-    release: bpm
-
 instance_groups:
 - name: avalanche
   azs: [z1, z2, z3]
@@ -19,7 +13,7 @@ instance_groups:
     release: avalanche
     properties:
       avalanche:
-        metric_count: 1000
+        metric_count: 500
         label_count: 10
         series_count: 10
         metricname_length: 5
@@ -44,9 +38,6 @@ update:
   serial: false
 
 releases:
-- name: bpm
-  version: 0.8.0
-  url: git+https://github.com/cloudfoundry-incubator/bpm-release
 - name: avalanche
   version: create  # TODO: update after first final release
   url: .           # TODO: update after first final release
