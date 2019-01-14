@@ -1,0 +1,25 @@
+name: avalanche
+version: "1"
+commit_hash: 0c102be
+uncommitted_changes: false
+jobs:
+- name: avalanche
+  version: 66395a1c4fb5756b06a19c35c45c7eca6d4001ad
+  fingerprint: 66395a1c4fb5756b06a19c35c45c7eca6d4001ad
+  sha1: 3530f0a5b0d46d1a2e7ae3d271159f0075abe6c0
+packages:
+- name: avalanche
+  version: a8fb06d1e7526f293f8b504aa4869650ead1e947
+  fingerprint: a8fb06d1e7526f293f8b504aa4869650ead1e947
+  sha1: bdc33477070006939d99423ce7f0b309424820d5
+  dependencies:
+  - golang-1.10-linux
+- name: golang-1.10-linux
+  version: 81eb736caa18470925321b1222e07315f1bc860c
+  fingerprint: 81eb736caa18470925321b1222e07315f1bc860c
+  sha1: d5619a1d2df5efbce5eda7fc342f19f6f2f32a0e
+  dependencies: []
+license:
+  version: 84faeccfec539d8796dedbe45ac9fda6b0ea4477
+  fingerprint: 84faeccfec539d8796dedbe45ac9fda6b0ea4477
+  sha1: 2cdc4cb23a06c26cddb083fcfbe1114b1543069c
